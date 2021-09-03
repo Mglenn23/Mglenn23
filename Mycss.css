@@ -3,7 +3,7 @@ section {
 }
 .jumbotron {
   padding-top: 7rem;
-  background-color: #fef7dc;
+  background-color: #f4f9f9;
 }
 html {
   scroll-behavior: smooth;
@@ -15,7 +15,7 @@ html {
   perspective: 1000px;
 }
 .bgphotopic {
-  background: #a19882;
+  background: #222831;
   width: 300px;
   height: 300px;
   display: flex;
