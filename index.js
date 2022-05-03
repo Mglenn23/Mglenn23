@@ -1,5 +1,3 @@
-alert("For best experience use browser on desktop");
-
 let bg = document.getElementById("bg");
 let building = document.getElementById("building");
 let moon = document.getElementById("moon");
