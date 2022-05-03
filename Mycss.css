@@ -1,3 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+body {
+  background: #0a2a43;
+  min-height: 1500px;
+}
+#sectionPar {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to top, #0a2a43, transparent);
+  z-index: 10000;
+}
+section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  mix-blend-mode: color;
+}
+.sectionParIMG {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+#textMG {
+  position: relative;
+  color: #fff;
+  font-size: 10em;
+  z-index: 1;
+}
 section {
   padding-top: 5rem;
 }
@@ -13,6 +71,7 @@ html {
   justify-content: center;
   align-items: center;
   perspective: 1000px;
+  padding: 25px;
 }
 .bgphotopic {
   background: #222831;
@@ -43,4 +102,257 @@ html {
   padding-bottom: 150px;
   padding-right: 200px;
   z-index: 1;
+}
+
+.parallax {
+  background: url("./Img/nightsky.jpg") no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 400px;
+}
+.parallaxContact {
+  background: url("./Img/earth.jpg") no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 1000px;
+  color: #fff;
+}
+
+#experience {
+  color: white;
+}
+.containerEx h3 {
+  padding-top: 10px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.containerEx h5 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.containerEx p {
+  padding: 15px;
+}
+.cardsExperience {
+  display: flex;
+}
+.cardsExperience .text-cardsExperience {
+  background: #222831;
+  margin: 20px;
+  /* padding: 20px; */
+}
+
+.containerProfile h3 {
+  padding-top: 25px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 30px;
+}
+.containerProfile p {
+  padding: 20px;
+  margin-top: 30px;
+  font-size: 25px;
+  text-align: center;
+}
+.cardsProfile .text-cardsProfile {
+  margin: 20px;
+  /* padding: 20px; */
+}
+.cardsProfile {
+  display: flex;
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .cardsExperience {
+    flex-direction: column;
+  }
+  .cardsProfile {
+    flex-direction: column;
+    font-size: 10px;
+  }
+  .parallax {
+    height: 1035px;
+  }
+  .cardsSkills {
+    flex-direction: column;
+  }
+  .cardsSkills img {
+    max-width: 100%;
+  }
+  #textMG {
+    position: relative;
+    color: #fff;
+    font-size: 7em;
+    z-index: 1;
+  }
+  #moon {
+    display: none;
+  }
+  .parallaxContact {
+    height: 800px;
+  }
+}
+@media (max-width: 500px) {
+  .cardsExperience {
+    flex-direction: column;
+  }
+  .cardsProfile {
+    flex-direction: column;
+    font-size: 7px;
+  }
+  .parallax {
+    height: 1300px;
+  }
+  .cardsSkills {
+    flex-direction: column;
+  }
+  .cardsSkills img {
+    max-width: 100%;
+  }
+  #textMG {
+    position: relative;
+    color: #fff;
+    font-size: 5.5em;
+    z-index: 1;
+  }
+  #moon {
+    display: none;
+  }
+  .parallaxContact {
+    height: 650px;
+  }
+  #imgProfile,
+  #imgSkills,
+  #imgExperience {
+    visibility: hidden;
+    width: 100%;
+  }
+}
+
+.cardsSkills {
+  display: flex;
+  margin-left: 10%;
+}
+.cardsSkills .text-cardsSkills {
+  margin: 20px;
+  /* padding: 20px; */
+}
+
+.reveal {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: all 2s ease;
+}
+.reveal.active {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.revealSkills {
+  position: relative;
+  transform: translateZ(150px);
+  opacity: 0;
+  transition: all 2s ease;
+}
+.revealSkills.active {
+  transform: translateZ(0px);
+  opacity: 1;
+}
+
+.neonText {
+  animation: flicker 1.5s infinite alternate;
+  color: #fff;
+  font-size: 50px;
+  font-family: "Helvetica Neue", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+/* Flickering animation */
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #0fa, 0 0 80px #0fa, 0 0 90px #0fa, 0 0 100px #0fa, 0 0 150px #0fa;
+  }
+
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+}
+
+:root {
+  --clr-neon: rgb(255, 20, 36);
+  --clr-bg: rgb(247, 247, 247);
+}
+.neon-button {
+  font-size: 20px;
+
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--clr-neon);
+  border: var(--clr-neon) 0.125em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+
+  background-color: transparent;
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+
+  box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+
+  position: relative;
+}
+
+.neon-button::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background: var(--clr-neon);
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0.7;
+}
+
+.neon-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 2em 0.5em var(--clr-neon);
+  opacity: 0;
+  background-color: var(--clr-neon);
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+
+.neon-button:hover,
+.neon-button:focus {
+  color: var(--clr-bg);
+  background-color: var(--clr-neon);
+  text-shadow: none;
+}
+
+.neon-button:hover::before,
+.neon-button:focus::before {
+  opacity: 1;
+}
+.neon-button:hover::after,
+.neon-button:focus::after {
+  opacity: 1;
 }
